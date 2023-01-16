@@ -22,5 +22,6 @@ class FinancialProduct:
             return res
 
 
-value_floor_0_cap_10 = FinancialProduct("value_floor_0_cap_10", f=lambda x: 0 if x < 0 else x if x <= 0.1 else 0.1)
-uncapped_floor_0_spread_8 = FinancialProduct("uncapped_floor_0_spread_8", f=lambda x: 0 if x <= 0.08 else x - 0.08)
+FP_IDEM = FinancialProduct("idem", f=lambda x: x)
+FP_VALUE_FLOOR_0_CAP_10 = FinancialProduct("value_floor_0_cap_10", f=lambda x: 0 if x < 0 else x if x <= 0.1 else 0.1)
+FP_UNCAPPED_FLOOR_0_SPREAD_8 = FinancialProduct("uncapped_floor_0_spread_8", f=lambda x: 0 if x <= 0.08 else x - 0.08)

@@ -1,5 +1,5 @@
 import unittest
-from finsim.simulate import *
+from finsim.simulation import *
 
 
 class SimulateTest(unittest.TestCase):
@@ -24,13 +24,13 @@ class SimulateTest(unittest.TestCase):
 
     def test_simulate_terminal_gains(self):
         gains = [0.3, -0.2, 0.1]  # 1.3 * 0.8 * 1.1 = 1.144
-        res = calculate_terminal_gains(gains)
+        res = calculate_returns(gains)
         self.assertAlmostEqual(1.144, res, places=4)
 
     def test_simulate_terminal_gains_cap(self):
         gains = [0.3, -0.2, 0.1]  # 1.3 * 0.8 * 1.1 = 1.144
         capf = lambda x: 0 if x < 0 else x if x < 0.1 else 0.1  # cap at 10%, but not negative
-        res = calculate_terminal_gains(gains, capf)  # 1.1 * 1 * 1.1 = 1.21
+        res = calculate_returns(gains, capf)  # 1.1 * 1 * 1.1 = 1.21
         self.assertAlmostEqual(1.21, res, places=4)
 
 

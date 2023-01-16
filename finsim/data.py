@@ -10,6 +10,9 @@ class MarketGains:
         self.end_year = end_year
         self.gains = gains
 
+    def __repr__(self):
+        return f"{self.name} ({self.start_year}-{self.end_year})"
+
 
 SP500 = MarketGains('SP500', 2001, 2022, sp500)
 NASDAQ = MarketGains('NASDAQ', 2001, 2022, nasdaq)
