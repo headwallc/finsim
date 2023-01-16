@@ -6,7 +6,7 @@ dow = [-0.1921, 0.2021, 0.0623, 0.0, 0.1017, 0.0, -0.3333, 0.175, 0.1017, 0.0, 0
 russell = [-0.3333, 0.3333, 0.0, 0.0, 0.0, 0.0, -0.3333, 0.3333, 0.0, 0.0, 0.0, 0.3333, 0.0, 0.0, 0.0, 0.3333, 0.0, 0.3333, 0.0, 0.3333]
 
 
-class HistoricData:
+class MarketGains:
     def __init__(self, name, start_year, end_year, gains):
         self.name = name
         self.start_year = start_year
@@ -14,5 +14,5 @@ class HistoricData:
         self.gains = gains
 
 
-SP500 = HistoricData('SP500', 2001, 2022, sp500)
-NASDAQ = HistoricData('NASDAQ', 2001, 2022, nasdaq)
+SP500 = MarketGains('SP500', 2001, 2022, sp500)
+NASDAQ = MarketGains('NASDAQ', 2001, 2022, nasdaq)
