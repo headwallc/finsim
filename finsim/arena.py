@@ -37,4 +37,4 @@ class Arena:
     def print_results(self):
         for i in self.returns:
             print(i)
-            print(self.returns[i].get_std_quantiles())
+            print(self.returns[i].get_quantiles_5_50_95())

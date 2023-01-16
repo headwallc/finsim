@@ -56,9 +56,10 @@ class Distribution:
         res = np.quantile(self.returns, q)
         return res
 
-    def get_std_quantiles(self):
-        return {
-            0.95: self.get_quantile(0.95),
-            0.5: self.get_quantile(0.5),
-            0.05: self.get_quantile(0.05),
-        }
+    def get_quantiles_5_50_95(self):
+        return [
+            round(self.get_quantile(0.05), 3),
+            round(self.get_quantile(0.5), 3),
+            round(self.get_quantile(0.95), 3)
+        ]
+
