@@ -46,20 +46,19 @@ class Distribution:
     def get_returns(self):
         return self.returns
 
-    def get_distribution(self):
-        return np.histogram(self.returns, bins=100)
+    def get_distribution(self, bins=100):
+        return np.histogram(self.returns, bins=bins)
 
-    def get_pmf(self):
-        return np.histogram(self.returns, bins=100, density=True)
+    def get_pmf(self, bins=100):
+        return np.histogram(self.returns, bins=bins, density=True)
 
     def get_quantile(self, q):
-        res = np.quantile(self.returns, q)
-        return res
+        return np.quantile(self.returns, q)
 
     def get_quantiles_5_50_95(self):
         return [
-            round(self.get_quantile(0.05), 3),
-            round(self.get_quantile(0.5), 3),
-            round(self.get_quantile(0.95), 3)
+            self.get_quantile(0.05),
+            self.get_quantile(0.5),
+            self.get_quantile(0.95)
         ]
 
