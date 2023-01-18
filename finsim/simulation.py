@@ -1,3 +1,4 @@
+import math
 import random
 import numpy as np
 
@@ -54,6 +55,10 @@ class Distribution:
 
     def get_quantile(self, q):
         return np.quantile(self.returns, q)
+
+    def get_gain_per_annum_5_50_95(self, k):
+        qts = self.get_quantiles_5_50_95()
+        return [(math.pow(x, 1.0/k) - 1) * 100.0 for x in qts]
 
     def get_quantiles_5_50_95(self):
         return [

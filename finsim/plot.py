@@ -5,7 +5,7 @@ import numpy as np
 
 
 def fmt_pct(x):
-    e = int((x-1) * 100.0)
+    e = int((x - 1) * 100.0)
     return f'{e:,}%'
 
 
@@ -41,12 +41,10 @@ class Plot:
                 f"5% : {fmt_pct(qts_rounded[2])}"
             ], loc="upper right")
             # plot ticks
-            # ax.set_xticks(np.arange(0, 15, 2.0))
             ax.xaxis.set_major_locator(ticker.MultipleLocator(1))
             ax.xaxis.set_minor_locator(ticker.MultipleLocator(0.2))
             ax.set_xticklabels(map(fmt_pct, ax.get_xticks()))  # , rotation = 45)
             idx += 1
-
 
         plt.subplots_adjust(hspace=0.6)
         plt.grid()
